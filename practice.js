@@ -4,8 +4,12 @@
 //Create an object called me. Give it a key of name with the value being your name, and another key of age with the value being your age. Then alert your name using dot notation.
 
   //Code here
+var me = {
+  name: 'Jordan',
+  age: 27
+};
 
-
+alert(me[name]);
 
 
 //NEXT PROBLEM
@@ -15,23 +19,33 @@
 
 //Make a 'favoriteThings' object that contains the following keys: band, food, person, book, movie, holiday. Have the values to those keys be your favorite thing in that category.
 
-  //Code here
+  var favoriteThings = {
+    band: 'Hanggai',
+    food: 'pizza',
+    person: 'Bruce Lee',
+    book: 'LotR',
+    movie: 'The Room',
+    holiday: 'my birthday'
+    
+    }//Code here
 
 
 //After you've made your object, add another key named 'car' with the value being your favorite car and then another key named 'brand' with the value being your favorite brand.
 
+favoriteThings['car'] = 'Skyline GTR';
+favoriteThings['brand'] = 'Nissan';
   //Code here
 
 
 //Now change the value of the food key in your favoriteThings object to be 'Chicken Nuggets' and change the value of the book key in your favoriteThings object to be 'Harry Potter'.
-
+favoriteThings['food'] = 'Chicken Nuggets';
+favoriteThings['book'] = 'Harry Potter';
   //Code here
 
 
 
 
 //NEXT PROBLEM
-
 
 
 /*Create an empty Object called backPack. Now, create a variable called 'item'
@@ -42,10 +56,17 @@ Set the value of that key to 'chapstick'.
 Using dot notation, add another key (or property) to your backPack object
 that is named color, with the value being the color of your backpack. */
 
+var backPack = {};
+var item = 'firstPocket';
+backPack[item] = 'chapstick';
+var color = 'firstPocket';
+backPack.color = 'green';
+
   //Code here
 
 //After you do the above, alert your entire backPack object.
 
+alert(backPack);
   //Code here
 
 /*You probably noticed that it just alerted [object Object].
@@ -53,7 +74,7 @@ Alerting to see the data in your Object doesn't work so well.
 Instead, console.log your whole backPack object and then check out the console. */
 
   //Code here
-
+console.log(backPack);
 
 
 
@@ -64,10 +85,23 @@ Instead, console.log your whole backPack object and then check out the console. 
 
 //Create an 'alsoMe' object with the following properties name, age, height, gender, married, eyeColor, hairColor. Fill those properties in with the appropriate values.
 
+var alsoMe = {
+  name: 'Jordan',
+  age: 27,
+  height: "five eight",
+  gender: 'male',
+  married: false,
+  eyeColor: 'brown',
+  hairColor: 'black'
+}
   //Code Here
 
 //Now, loop through your object and alert every value. *Tyler --> 24 --> 6'0 --> Male, etc etc
 
+for(var key in alsoMe)
+{
+  alert(alsoMe[key]);
+}
   //Code Here
 
 
@@ -79,11 +113,20 @@ Instead, console.log your whole backPack object and then check out the console. 
 
 
 //Create an Object called 'album' with 5 keys named different song titles that you make up, with the values being the length of each song.
-
+var album = {
+  'Shine On Me': '4:08',
+  'Kamera': '3:30',
+  'Heavy Metal Drummer': '4:50',
+  'Mr. Blue Sky': '6:00',
+  'Poker Face': '4:10'
+}
   //Code Here
 
 //Now, loop through your album object alerting every song title individually.
 
+for (var key in album) {
+  alert(key);
+}
   //Code Here
 
 
@@ -96,6 +139,9 @@ Instead, console.log your whole backPack object and then check out the console. 
 
 //Create an object called states that has 5 US states as properties with the values being their population (doesn't have to be accurate).
 
+// var states = {
+
+// }
   //Code Here
 
 //Now, loop through your states object and if the states population is greater than 30K, alert that state.
@@ -121,6 +167,11 @@ var user1 = {
 /*Above you're given a user object. Loop through the user object checking to make sure
 that each value is truthy. If it's not truthy, remove it from the object. */
 
+for (var key in user1 ){
+  if (!user1[key]) {
+    delete user1[key];
+  }
+}
   //Code Here
 
 //Once you get your truthy Object, Change the remaining values in the object to be specific to you (name: 'your name', username: 'your username'), rather than my information.
